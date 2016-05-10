@@ -1,7 +1,9 @@
 Openresty
 =========
 
-A minimal package utilizing openresty components that will function against the nginx-extras package provided by Ubuntu in Xenial (16.04)
+A minimal package utilizing openresty components that will function against the nginx-extras package provided by Ubuntu in Xenial (16.04).
+
+This package was created to allow individuals unfamiliar with openresty to easily get started with NGINX and HashiCorp Consul dynamic upstreams. 
 
 More information on openresty here:
 
