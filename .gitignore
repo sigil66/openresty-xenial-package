@@ -1,0 +1,6 @@
+pkg/
+build/
+lua-resty-core/
+lua-resty-http/
+Gemfile.lock
+.gems/
