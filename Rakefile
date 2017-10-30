@@ -1,6 +1,6 @@
 NAME='openresty'
 DESCRIPTION='Minimal openresty package for xenial, created to illustrate nginx consul integration'
-VERSION='0.1.4'
+VERSION='0.1.5'
 ITERATION=1
 BUILD_DIR='./build'
 OUT_DIR='./pkg'
@@ -21,6 +21,7 @@ desc 'Clean'
 task :clean do
   sh %{ rm -rf lua-resty-core }
   sh %{ rm -rf lua-resty-http }
+  sh %{ rm -rf lua-resty-iputils }
   sh %{ rm -rf lua-resty-lrucache }
   sh %{ rm -rf ./build }
   sh %{ rm -rf ./pkg }
@@ -30,6 +31,7 @@ desc 'Fetch Source'
 task :fetch do
   sh %{ git clone https://github.com/openresty/lua-resty-core }
   sh %{ git clone https://github.com/pintsized/lua-resty-http }
+  sh %{ git clone https://github.com/hamishforbes/lua-resty-iputils }
   sh %{ git clone https://github.com/openresty/lua-resty-lrucache }
 end
 
@@ -42,11 +44,14 @@ task :build do
   sh %{ mkdir -p #{BUILD_DIR}/usr/lib/openresty }
   sh %{ mkdir #{BUILD_DIR}#{PREFIX}/lua-resty-core }
   sh %{ mkdir #{BUILD_DIR}#{PREFIX}/lua-resty-http }
+  sh %{ mkdir #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
   sh %{ mkdir #{BUILD_DIR}#{PREFIX}/lua-resty-lrucache }
   sh %{ cp -Rp ./lua-resty-core/lib #{BUILD_DIR}#{PREFIX}/lua-resty-core }
   sh %{ cp -Rp ./lua-resty-core/README.markdown #{BUILD_DIR}#{PREFIX}/lua-resty-core }
   sh %{ cp -Rp ./lua-resty-http/lib #{BUILD_DIR}#{PREFIX}/lua-resty-http }
   sh %{ cp -Rp ./lua-resty-http/LICENSE #{BUILD_DIR}#{PREFIX}/lua-resty-http }
+  sh %{ cp -Rp ./lua-resty-iputils/lib #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
+  sh %{ cp -Rp ./lua-resty-iputils/README.markdown #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
   sh %{ cp -Rp ./lua-resty-lrucache/lib #{BUILD_DIR}#{PREFIX}/lua-resty-lrucache }
   sh %{ cp -Rp ./lua-resty-lrucache/README.markdown #{BUILD_DIR}#{PREFIX}/lua-resty-lrucache }
 end
