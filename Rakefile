@@ -51,7 +51,7 @@ task :build do
   sh %{ cp -Rp ./lua-resty-http/lib #{BUILD_DIR}#{PREFIX}/lua-resty-http }
   sh %{ cp -Rp ./lua-resty-http/LICENSE #{BUILD_DIR}#{PREFIX}/lua-resty-http }
   sh %{ cp -Rp ./lua-resty-iputils/lib #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
-  sh %{ cp -Rp ./lua-resty-iputils/README.markdown #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
+  sh %{ cp -Rp ./lua-resty-iputils/README.md #{BUILD_DIR}#{PREFIX}/lua-resty-iputils }
   sh %{ cp -Rp ./lua-resty-lrucache/lib #{BUILD_DIR}#{PREFIX}/lua-resty-lrucache }
   sh %{ cp -Rp ./lua-resty-lrucache/README.markdown #{BUILD_DIR}#{PREFIX}/lua-resty-lrucache }
 end
